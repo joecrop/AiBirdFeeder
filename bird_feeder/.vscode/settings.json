@@ -68,6 +68,9 @@
     ],
     "C_Cpp.default.defines": [
         "${config:board}"
-    ]
+    ],
+    "files.associations": {
+        "cnn.h": "c"
+    }
 }
 

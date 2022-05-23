@@ -1,0 +1,56 @@
+[AI8x Installer] Wed May 18 14:47:13 2022
+[AI8x Installer] System info:
+[AI8x Installer] 	OS: Windows
+[AI8x Installer] 	Version: 10.0.19042
+[AI8x Installer] 	Architecture: AMD64
+[AI8x Installer] 	GPU: Quadro P500, driver version: 452.66
+[AI8x Installer] Installing to C:\MaximSDK\Tools\ai8x-tools...
+[AI8x Installer] Retrieving Git...
+[AI8x Installer] Git is installed:  git version 2.34.1.windows.1
+[AI8x Installer] Git config:
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=Joe Crop
+user.email=joe.crop@gmail.com
+
+[AI8x Installer] Retrieving Git installation location...
+[AI8x Installer] Checking for existing Python version...
+[AI8x Installer] Found 3.10.1 at C:\Python310\python.exe
+[AI8x Installer] Installing Python 3.8.10...
+[AI8x Installer] Importing existing Python installation into pyenv as 'system-3.10.1'
+[AI8x Installer] Setting pyenv global version to 'system-3.10.1'
+[AI8x Installer] Setting ai8x-training to use Python 3.8.10...
+[AI8x Installer] Creating ai8x-training virtual environment...
+[AI8x Installer] Installing python packages into training virtual environment (This could take a while)...
+[AI8x Installer] CUDA GPU found!  Installing using requirements-win-cu11.txt
+[AI8x Installer] Setting ai8x-synthesis to use Python 3.8.10...
+[AI8x Installer] Creating ai8x-synthesis virtual environment...
+[AI8x Installer] Installing python packages into training virtual environment (This could take a while)...
+[AI8x Installer] Installation complete!
+
+====================
+
+The ai8x tools are successfully installed. 
+
+You can use the utility batch files and shell scripts to activate the virtual environments.  
+
+MSYS2/MinGW is the recommended terminal for development.
+
+====================
+

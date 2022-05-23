@@ -36,3 +36,4 @@ bird_feeder/build/system_max78000.d
 bird_feeder/build/system_max78000.o
 bird_feeder/build/tft_ili9341.d
 bird_feeder/build/tft_ili9341.o
+bird_feeder/flash.log

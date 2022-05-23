@@ -72,6 +72,12 @@
 
 #define TFT_BUFF_SIZE   30    // TFT buffer size
 
+#define PWM_CLOCK_SOURCE    MXC_TMR_32K_CLK      // \ref mxc_tmr_clock_t
+#define FREQ            50                // (Hz)
+#define DUTY_CYCLE_OPEN      9                  // (%)
+#define DUTY_CYCLE_CLOSED      10                  // (%)
+#define PWM_TIMER       MXC_TMR4            // must change PWM_PORT and PWM_PIN if changed
+
 #ifdef BOARD_EVKIT_V1
 int image_bitmap_1 = ADI_256_bmp;
 int image_bitmap_2 = logo_white_bg_darkgrey_bmp;
@@ -92,6 +98,8 @@ static int32_t ml_data[CNN_NUM_OUTPUTS];
 static q15_t ml_softmax[CNN_NUM_OUTPUTS];
 
 volatile uint32_t cnn_time; // Stopwatch
+
+volatile bool door_open = false;
 
 // RGB565 buffer for TFT
 uint8_t data565[IMAGE_SIZE_X * 2];
@@ -316,6 +324,59 @@ void capture_process_camera(void) {
 }
 #endif
 
+void MoveDoor(bool opened)
+{
+	if(opened == door_open) {
+		return;
+	}
+	door_open = opened;
+
+    // Declare variables
+    mxc_tmr_cfg_t tmr;          // to configure timer
+    unsigned int periodTicks = MXC_TMR_GetPeriod(PWM_TIMER, PWM_CLOCK_SOURCE, 16, FREQ);
+    unsigned int dutyTicksOpen   = periodTicks * DUTY_CYCLE_OPEN / 100;
+    unsigned int dutyTicksClosed   = periodTicks * DUTY_CYCLE_CLOSED / 100;
+    
+    /*
+    Steps for configuring a timer for PWM mode:
+    1. Disable the timer
+    2. Set the pre-scale value
+    3. Set polarity, PWM parameters
+    4. Configure the timer for PWM mode
+    5. Enable Timer
+    */
+    
+    MXC_TMR_Shutdown(PWM_TIMER);
+    
+    tmr.pres = TMR_PRES_16;
+    tmr.mode = TMR_MODE_PWM;
+    tmr.bitMode = TMR_BIT_MODE_32;    
+    tmr.clock = PWM_CLOCK_SOURCE;
+    tmr.cmp_cnt = periodTicks;
+    tmr.pol = 1;
+    
+    if (MXC_TMR_Init(PWM_TIMER, &tmr, true) != E_NO_ERROR) {
+        printf("Failed PWM timer Initialization.\n");
+        return;
+    }
+    
+    if(opened) {
+        if (MXC_TMR_SetPWM(PWM_TIMER, dutyTicksOpen) != E_NO_ERROR) {
+            printf("Failed TMR_PWMConfig.\n");
+            return;
+        }
+    } else {
+        if (MXC_TMR_SetPWM(PWM_TIMER, dutyTicksClosed) != E_NO_ERROR) {
+            printf("Failed TMR_PWMConfig.\n");
+            return;
+        }
+    }
+    
+    MXC_TMR_Start(PWM_TIMER);
+    
+    printf("PWM started.\n\n");
+}
+
 /* **************************************************************************** */
 int main(void) {
 	int i;
@@ -480,17 +541,20 @@ int main(void) {
 					sprintf(buff, "Unknown"));
 			LED_On(LED1);
 			LED_On(LED2);
+			MoveDoor(true);
 
 		} else if (ml_data[0] > ml_data[1]) {
 			TFT_Print(buff, TFT_X_START + 10, TFT_Y_START - 30, font_1,
 					sprintf(buff, "%s (%d%%)", classes[0], result[0]));
 			LED_On(LED1);
 			LED_Off(LED2);
+			MoveDoor(true);
 		} else {
 			TFT_Print(buff, TFT_X_START + 10, TFT_Y_START - 30, font_1,
 					sprintf(buff, "%s (%d%%)", classes[1], result[1]));
 			LED_Off(LED1);
 			LED_On(LED2);
+			MoveDoor(false);
 		}
 
 		memset(buff, 32, TFT_BUFF_SIZE);
