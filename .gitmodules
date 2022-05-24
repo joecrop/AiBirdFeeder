@@ -1,4 +1,4 @@
 [submodule "distiller"]
-	path = distiller
+	path = ai8x-tools/ai8x-training/distiller
 	url = https://github.com/MaximIntegratedAI/distiller.git
 	branch = pytorch-1.8

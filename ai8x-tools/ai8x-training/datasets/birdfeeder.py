@@ -7,7 +7,7 @@
 #
 ###################################################################################################
 """
-Cats and Dogs Datasets
+Birdfeeder Dataset
 """
 import errno
 import os
@@ -53,27 +53,21 @@ def augment_blur(orig_img):
     return train_transform(orig_img)
 
 
-def catsdogs_get_datasets(data, load_train=True, load_test=True, aug=2):
+def birdfeeder_get_datasets(data, load_train=True, load_test=True, aug=2):
     """
-    Load Cats & Dogs dataset
+    Load birdfeeder dataset
     """
     (data_dir, args) = data
     path = data_dir
-    dataset_path = os.path.join(path, "cats_vs_dogs")
+    dataset_path = os.path.join(path, "birdfeeder")
     is_dir = os.path.isdir(dataset_path)
     if not is_dir:
         print("******************************************")
-        print("Please follow the instructions below:")
-        print("Download the dataset to the \'data\' folder by visiting this link: "
-              "\'https://www.kaggle.com/datasets/salader/dogs-vs-cats\'")
-        print("If you do not have a Kaggle account, sign up first.")
-        print("Unzip the downloaded file and find \'test\' and \'train\' folders "
-              "and copy them into \'data/cats_vs_dogs\'. ")
         print("Make sure that images are in the following directory structure:")
-        print("  \'data/cats_vs_dogs/train/cats\'")
-        print("  \'data/cats_vs_dogs/train/dogs\'")
-        print("  \'data/cats_vs_dogs/test/cats\'")
-        print("  \'data/cats_vs_dogs/test/dogs\'")
+        print("  \'data/birdfeeder/train/squirrels\'")
+        print("  \'data/birdfeeder/train/not_squirrels\'")
+        print("  \'data/birdfeeder/test/squirrels\'")
+        print("  \'data/birdfeeder/test/not_squirrels\'")
         print("Re-run the script. The script will create an \'augmented\' folder ")
         print("with all the original and augmented images. Remove this folder if you want "
               "to change the augmentation and to recreate the dataset.")
@@ -192,9 +186,9 @@ def catsdogs_get_datasets(data, load_train=True, load_test=True, aug=2):
 
 datasets = [
     {
-        'name': 'cats_vs_dogs',
+        'name': 'birdfeeder',
         'input': (3, 128, 128),
-        'output': ('cat', 'dog'),
-        'loader': catsdogs_get_datasets,
+        'output': ('squirrels', 'not_squirrels'),
+        'loader': birdfeeder_get_datasets,
     },
 ]
