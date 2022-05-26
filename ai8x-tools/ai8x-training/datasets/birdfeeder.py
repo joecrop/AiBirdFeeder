@@ -53,7 +53,7 @@ def augment_blur(orig_img):
     return train_transform(orig_img)
 
 
-def birdfeeder_get_datasets(data, load_train=True, load_test=True, aug=2):
+def birdfeeder_get_datasets(data, load_train=True, load_test=True, aug=5):
     """
     Load birdfeeder dataset
     """
@@ -113,7 +113,8 @@ def birdfeeder_get_datasets(data, load_train=True, load_test=True, aug=2):
             for (dirpath, _, filenames) in os.walk(test_path):
                 print(f'copying {dirpath} -> {processed_test_path}')
                 for filename in filenames:
-                    if filename.endswith('.jpg'):
+                    if filename.lower().endswith('.jpg') or filename.lower().endswith('.jpeg'):
+                        print(f'copying {filename}')
                         relsourcepath = os.path.relpath(dirpath, test_path)
                         destpath = os.path.join(processed_test_path, relsourcepath)
 
@@ -126,7 +127,9 @@ def birdfeeder_get_datasets(data, load_train=True, load_test=True, aug=2):
             for (dirpath, _, filenames) in os.walk(train_path):
                 print(f'copying and augmenting {dirpath} -> {processed_train_path}')
                 for filename in filenames:
-                    if filename.endswith('.jpg'):
+                    if filename.lower().endswith('.jpg') or filename.lower().endswith('.jpeg'):
+                        print(f'copying {filename}')
+
                         relsourcepath = os.path.relpath(dirpath, train_path)
                         destpath = os.path.join(processed_train_path, relsourcepath)
                         srcfile = os.path.join(dirpath, filename)
