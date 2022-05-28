@@ -130,6 +130,7 @@ weight_sum = None
 weight_stddev = None
 weight_mean = None
 
+torch.cuda.empty_cache()
 
 def main():
     """main"""
