@@ -32,8 +32,8 @@
 * ownership rights.
 *******************************************************************************/
 
-// cats-dogs
-// Created using ai8xize.py --test-dir sdk/Examples/MAX78000/CNN --prefix cats-dogs --checkpoint-file trained/ai85-catsdogs-qat8-q.pth.tar --config-file networks/cats-dogs-hwc.yaml --fifo --softmax --device MAX78000 --compact-data --mexpress --timer 0 --display-checkpoint --verbose --overwrite
+// birdfeeder
+// Created using ai8xize.py --test-dir ../../ --prefix birdfeeder --checkpoint-file trained/ai85-birdfeeder_qat.pth.tar --config-file networks/birdfeeder-hwc.yaml --fifo --softmax --device MAX78000 --compact-data --mexpress --timer 0 --display-checkpoint --verbose --overwrite
 
 // DO NOT EDIT - regenerate this file instead!
 
@@ -675,7 +675,7 @@ int cnn_configure(void)
   *((volatile uint32_t *) 0x50100628) = 0x28802c78; // Mask offset and count
   *((volatile uint32_t *) 0x50100128) = 0x00000100; // 1D
   *((volatile uint32_t *) 0x501006a8) = 0x003f007f; // TRAM ptr max
-  *((volatile uint32_t *) 0x501007a8) = 0x080c3000; // Post processing register
+  *((volatile uint32_t *) 0x501007a8) = 0x080e3000; // Post processing register
   *((volatile uint32_t *) 0x50100728) = 0xffffffff; // Mask and processor enables
 
   // Layer 6 quadrant 1
@@ -688,7 +688,7 @@ int cnn_configure(void)
   *((volatile uint32_t *) 0x50500628) = 0x28802c78; // Mask offset and count
   *((volatile uint32_t *) 0x50500128) = 0x00000100; // 1D
   *((volatile uint32_t *) 0x505006a8) = 0x003f007f; // TRAM ptr max
-  *((volatile uint32_t *) 0x505007a8) = 0x080c2000; // Post processing register
+  *((volatile uint32_t *) 0x505007a8) = 0x080e2000; // Post processing register
 
   // Layer 6 quadrant 2
   *((volatile uint32_t *) 0x50900328) = 0x00000400; // SRAM write ptr
@@ -700,7 +700,7 @@ int cnn_configure(void)
   *((volatile uint32_t *) 0x50900628) = 0x28802c78; // Mask offset and count
   *((volatile uint32_t *) 0x50900128) = 0x00000100; // 1D
   *((volatile uint32_t *) 0x509006a8) = 0x003f007f; // TRAM ptr max
-  *((volatile uint32_t *) 0x509007a8) = 0x080c2000; // Post processing register
+  *((volatile uint32_t *) 0x509007a8) = 0x080e2000; // Post processing register
 
   // Layer 6 quadrant 3
   *((volatile uint32_t *) 0x50d00328) = 0x00000400; // SRAM write ptr
@@ -712,7 +712,7 @@ int cnn_configure(void)
   *((volatile uint32_t *) 0x50d00628) = 0x28802c78; // Mask offset and count
   *((volatile uint32_t *) 0x50d00128) = 0x00000100; // 1D
   *((volatile uint32_t *) 0x50d006a8) = 0x003f007f; // TRAM ptr max
-  *((volatile uint32_t *) 0x50d007a8) = 0x080c2000; // Post processing register
+  *((volatile uint32_t *) 0x50d007a8) = 0x080e2000; // Post processing register
 
 
   *((volatile uint32_t *) 0x50000000) = 0x00001908; // FIFO control

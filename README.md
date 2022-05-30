@@ -31,6 +31,12 @@ Now you can launch the training:
 #./scripts/train_birdfeeder.sh --workers=1
 ```
 
+Then generate test data
+
+```bash
+./scripts/evaluate_birdfeeder.sh --workers=1 --save-sample 10
+```
+
 ## Synthesis
 
 ```bash
@@ -39,3 +45,16 @@ deactivate
 source izer.sh
 ```
 
+### Quantize
+
+```bash
+./scripts/quantize_birdfeeder.sh
+```
+
+### Generate C code
+
+> Make sure the /birdfeeder path of this repo is checked in and there are no modified files, as this step will overwrite the code.
+
+```bash
+./scripts/gen_birdfeeder_max78000.sh --overwrite
+```
