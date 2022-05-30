@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/ov7692.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/ov7692.o: \
  c:\maximsdk\libraries\miscdrivers\camera\ov7692.c \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\stdio.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\_ansi.h \

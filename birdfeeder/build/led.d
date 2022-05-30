@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/led.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/led.o: \
  c:\maximsdk\libraries\miscdrivers\led\led.c \
  C:/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \
  C:/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/max78000.h \

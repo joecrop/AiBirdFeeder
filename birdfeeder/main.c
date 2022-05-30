@@ -60,7 +60,7 @@
 // Comment out USE_SAMPLEDATA to use Camera module
 //#define USE_SAMPLEDATA
 
-#define ASCII_ART
+//#define ASCII_ART
 
 #define IMAGE_SIZE_X  (64*2)
 #define IMAGE_SIZE_Y  (64*2)
@@ -91,7 +91,7 @@ int font_1 = (int)& SansSerif16x16[0];
 int font_2 = (int)& SansSerif16x16[0];
 #endif
 
-const char classes[CNN_NUM_OUTPUTS][10] = { "Cat", "Dog" };
+const char classes[CNN_NUM_OUTPUTS][13] = { "Not Squirrel", "Squirrel" };
 
 // Classification layer:
 static int32_t ml_data[CNN_NUM_OUTPUTS];
@@ -373,8 +373,15 @@ void MoveDoor(bool opened)
     }
     
     MXC_TMR_Start(PWM_TIMER);
+
+	// Wait for door to move
+	MXC_Delay(1000000);
+	MXC_TMR_Stop(PWM_TIMER);
     
-    printf("PWM started.\n\n");
+	if (!door_open) {
+		// If we closed the door, don't make another decision for a while
+		MXC_Delay(30000000);
+	}
 }
 
 /* **************************************************************************** */
@@ -536,22 +543,16 @@ int main(void) {
 
         memset(buff, 32, TFT_BUFF_SIZE);
 #endif
-		if (result[0] == result[1]) {
-			TFT_Print(buff, TFT_X_START + 10, TFT_Y_START - 30, font_1,
-					sprintf(buff, "Unknown"));
+		if ( result[1] > 70) {
 			LED_On(LED1);
 			LED_On(LED2);
 			MoveDoor(true);
 
 		} else if (ml_data[0] > ml_data[1]) {
-			TFT_Print(buff, TFT_X_START + 10, TFT_Y_START - 30, font_1,
-					sprintf(buff, "%s (%d%%)", classes[0], result[0]));
 			LED_On(LED1);
 			LED_Off(LED2);
 			MoveDoor(true);
 		} else {
-			TFT_Print(buff, TFT_X_START + 10, TFT_Y_START - 30, font_1,
-					sprintf(buff, "%s (%d%%)", classes[1], result[1]));
 			LED_Off(LED1);
 			LED_On(LED2);
 			MoveDoor(false);

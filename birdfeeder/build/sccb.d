@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/sccb.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/sccb.o: \
  c:\maximsdk\libraries\miscdrivers\camera\sccb.c \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\stdio.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\_ansi.h \

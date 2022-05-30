@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/stdio.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/stdio.o: \
  c:\maximsdk\libraries\miscdrivers\stdio.c \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\sys\errno.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\sys\reent.h \

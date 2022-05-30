@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/main.o: main.c \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/main.o: main.c \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\stdlib.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\machine\ieeefp.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\_ansi.h \

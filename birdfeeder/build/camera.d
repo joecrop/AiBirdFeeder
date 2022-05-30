@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/camera.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/camera.o: \
  c:\maximsdk\libraries\miscdrivers\camera\camera.c \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\stdlib.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\machine\ieeefp.h \

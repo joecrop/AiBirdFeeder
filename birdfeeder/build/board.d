@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/board.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/board.o: \
  C:/MaximSDK/Libraries/Boards/MAX78000/FTHR_RevA/Source/board.c \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\stdio.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\_ansi.h \

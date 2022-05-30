@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/softmax.o: softmax.c \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/softmax.o: softmax.c \
  C:/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc.h \
  C:/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \
  C:/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Include/max78000.h \

@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/pb.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/pb.o: \
  c:\maximsdk\libraries\miscdrivers\pushbutton\pb.c \
  c:\maximsdk\tools\gnutools\10.3\lib\gcc\arm-none-eabi\10.3.1\include\stddef.h \
  C:/MaximSDK/Libraries/PeriphDrivers/Include/MAX78000/mxc_device.h \

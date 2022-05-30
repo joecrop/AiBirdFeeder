@@ -1,4 +1,4 @@
-C:/MaximSDK/Examples/AiBirdFeeder/bird_feeder/build/heap.o: \
+C:/MaximSDK/Examples/AiBirdFeeder/birdfeeder/build/heap.o: \
  C:/MaximSDK/Libraries/CMSIS/Device/Maxim/MAX78000/Source/heap.c \
  c:\maximsdk\tools\gnutools\10.3\lib\gcc\arm-none-eabi\10.3.1\include\stdint.h \
  c:\maximsdk\tools\gnutools\10.3\arm-none-eabi\include\stdint.h \
