@@ -1,20 +1,22 @@
-# MAX78000 Cats vs Dogs Demo
+# MAX78000 AI Birdfeeder
 
+### Prerequisites:
 
+It is recommended that you framiliarize yourself with the (cats/dogs demo)[https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/] that comes with the MAX78000 SDK before diving into this project. It is a deravitave of the cats/dogs demo project.
 
-Description
------------
+Some useful links:
 
-The model trained in this demo is used to classify images of cats and dogs. 25000 images dataset is used to train the model. The dataset can be downloaded using [https://www.kaggle.com/c/dogs-vs-cats/data](https://www.kaggle.com/c/dogs-vs-cats/data) link. The input size is 64x64 pixels RGB which is 3x64x64 in CHW format.
+- (https://github.com/MaximIntegratedAI/MaximAI_Documentation)[https://github.com/MaximIntegratedAI/MaximAI_Documentation]
+- (https://github.com/MaximIntegratedAI/MAX78000_SDK)[https://github.com/MaximIntegratedAI/MAX78000_SDK]
 
-The code uses a sampledata header (sampledata.h) file to test a pre-defined input sample. The example also supports live capture from camera module and displays the image on the TFT LCD.
+## Building and running the code:
+
+If you are using vscode, please follow this guide for the proper setup: (https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/.vscode)[https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/.vscode]
 
 ### Building firmware:
 
-Navigate directory where **cats-dogs_demo** software is located and build the project:
 
 ```bash
-$ cd /Examples/MAX78000/CNN/cats-dogs_demo
 $ make
 ```
 
@@ -100,7 +102,7 @@ If using Linux, perform this step:
 ### MAX78000 Feather operations
 
 The TFT display is optional and not supplied with the MAX78000 Feather board.
-User should use PC terminal program to observe **cats-dogs_demo** result as described in "Terminal output" section with help of the ascii art representation of the captured image.
+User should use PC terminal program to observe result as described in "Terminal output" section with help of the ascii art representation of the captured image.
 
 The MAX78000 Feather compatible 2.4'' TFT FeatherWing display can be ordered here:
 
@@ -127,7 +129,7 @@ The PB1 (SW1) button is located as shown in picture bellow:
 
 
 
-### Camera Mode 
+### Camera Modeï¿½
 
 To operate in this mode, comment out "#define USE\_SAMPLEDATA", defined in main.c.
 
@@ -137,14 +139,14 @@ The data received from camera interface is an unsigned data and should be conver
 
 ### Offline Mode
 
-To operate in this mode, uncomment "#define USE\_SAMPLEDATA", defined in main.c. 
+To operate in this mode, uncomment "#define USE\_SAMPLEDATA", defined in main.c.ï¿½
 
-This mode uses a header file "sampledata.h" containing RGB image data and it should be included in the project to use it as an input to the cnn network. 
+This mode uses a header file "sampledata.h" containing RGB image data and it should be included in the project to use it as an input to the cnn network.ï¿½
 
 To create your own header file follow these steps:
 
 1.  Navigate to Utility directory. $ cd Utility
-2.  Download cat or dog image in this directory.
+2.  Download image in this directory.
 3.  Open 'rgb.py' file and change the name of the image file on line 8. im = (Image.open('image_filename.format')). Save the changes.
 4.  Now generate a header file using this command: python3 rgb.py
 5.  Use this header file in your main.c
