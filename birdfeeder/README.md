@@ -2,16 +2,16 @@
 
 ### Prerequisites:
 
-It is recommended that you framiliarize yourself with the (cats/dogs demo)[https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/] that comes with the MAX78000 SDK before diving into this project. It is a deravitave of the cats/dogs demo project.
+It is recommended that you framiliarize yourself with the [cats/dogs demo](https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/) that comes with the MAX78000 SDK before diving into this project. It is a deravitave of the cats/dogs demo project.
 
 Some useful links:
 
-- (https://github.com/MaximIntegratedAI/MaximAI_Documentation)[https://github.com/MaximIntegratedAI/MaximAI_Documentation]
-- (https://github.com/MaximIntegratedAI/MAX78000_SDK)[https://github.com/MaximIntegratedAI/MAX78000_SDK]
+- [https://github.com/MaximIntegratedAI/MaximAI_Documentation](https://github.com/MaximIntegratedAI/MaximAI_Documentation)
+- [https://github.com/MaximIntegratedAI/MAX78000_SDK](https://github.com/MaximIntegratedAI/MAX78000_SDK)
 
 ## Building and running the code:
 
-If you are using vscode, please follow this guide for the proper setup: (https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/.vscode)[https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/.vscode]
+If you are using vscode, please follow this guide for the proper setup: [https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/.vscode](https://github.com/MaximIntegratedAI/MAX78000_SDK/tree/master/Examples/MAX78000/CNN/cats-dogs_demo/.vscode)
 
 ### Building firmware:
 

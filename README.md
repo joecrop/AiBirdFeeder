@@ -1,5 +1,8 @@
 # AiBirdFeeder
+
 A bird feeder that uses AI to stop squirrels from eating the seed
+
+![AI Birdfeeder With Annotations](annotated_birdfeeder.png)
 
 ## Prerequisites
 
