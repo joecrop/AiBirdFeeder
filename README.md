@@ -6,7 +6,8 @@ A bird feeder that uses AI to stop squirrels from eating the seed
 
 ## Prerequisites
 
-- Maxim SDK
+1. Read [MAX78000 EV-Kit Guide](https://github.com/MaximIntegratedAI/MaximAI_Documentation/blob/master/MAX78000_Evaluation_Kit/README.md)
+2. Install software prereqs like PyTorch etc. See [ADI docs](https://github.com/MaximIntegratedAI/ai8x-synthesis#prerequisites)
 
 ## Training
 
