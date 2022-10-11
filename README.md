@@ -14,6 +14,7 @@ A bird feeder that uses AI to stop squirrels from eating the seed
 Pull the code needed to run the tools:
 
 ```bash
+git clone git@github.com:joecrop/AiBirdFeeder.git
 cd ai8x-tools
 git submodule update --init --recursive
 git pull --recurse-submodules --jobs=10
